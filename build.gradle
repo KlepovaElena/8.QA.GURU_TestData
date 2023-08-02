@@ -1,0 +1,30 @@
+plugins {
+    id 'java-library'
+}
+
+sourceSets.all {
+    configurations.getByName(runtimeClasspathConfigurationName) {
+        attributes.attribute(Attribute.of("org.gradle.jvm.environment", String), "standard-jvm")
+    }
+    configurations.getByName(compileClasspathConfigurationName) {
+        attributes.attribute(Attribute.of("org.gradle.jvm.environment", String), "standard-jvm")
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+group 'guru.qa'
+version '1.0'
+
+dependencies {
+    testImplementation (
+            'org.junit.jupiter:junit-jupiter:5.9.3',
+            'com.codeborne:selenide:6.16.0'
+    )
+}
+
+test {
+    useJUnitPlatform()
+}
