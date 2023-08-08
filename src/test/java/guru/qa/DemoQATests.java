@@ -1,9 +1,6 @@
 package guru.qa;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.selector.ByAttribute;
-import com.codeborne.selenide.selector.ByText;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -12,8 +9,7 @@ import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.*;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class DemoQATests {
 
@@ -29,6 +25,9 @@ public class DemoQATests {
     void fillFormTest() {
         open("/automation-practice-form");
 
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
+
         $("#firstName").setValue("Ivan");
         $("#lastName").setValue("Ivanov");
         $("#userEmail").setValue("Ivanovivan@gmail.com");
@@ -43,7 +42,7 @@ public class DemoQATests {
         $("#subjectsInput").setValue("E");
         $("#react-select-2-option-0").click();
         $("label[for='hobbies-checkbox-1']").click();
-        $("#uploadPicture").uploadFile(new File("src/test/recources/test.png"));
+        $("#uploadPicture").uploadFromClasspath("test.png");
         $("#currentAddress").setValue("Saint Petersburg, Russia");
         $("#state").click();
         $("#react-select-3-option-0").click();
