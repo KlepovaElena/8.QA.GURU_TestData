@@ -25,7 +25,9 @@ public class RegistrationPage {
             userPictureInput = $("#uploadPicture"),
             userStateInput = $("#state"),
             userCityInput = $("#city"),
-            submitButton = $("#submit");
+            submitButton = $("#submit"),
+            outputTable = $(".table-responsive"),
+            tableTitle = $("#example-modal-sizes-title-lg");
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
@@ -117,15 +119,14 @@ public class RegistrationPage {
     }
 
     public RegistrationPage checkTableTitle(String value) {
-        $("#example-modal-sizes-title-lg").shouldHave(text(value));
+        tableTitle.shouldHave(text(value));
 
         return this;
     }
 
     public RegistrationPage checkResult(String value) {
-        $(".table-responsive").shouldHave(text(value));
+        outputTable.shouldHave(text(value));
 
         return this;
     }
-
 }

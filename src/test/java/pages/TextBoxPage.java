@@ -13,7 +13,8 @@ public class TextBoxPage {
             userEmailInput = $("#userEmail"),
             userCurrentAddressInput = $("#currentAddress"),
             userPermanentAddressInput = $("#permanentAddress"),
-            submitButton = $("#submit");
+            submitButton = $("#submit"),
+            outputBox = $("#output");
 
     public TextBoxPage openPage() {
         open("/text-box");
@@ -54,7 +55,7 @@ public class TextBoxPage {
     }
 
     public TextBoxPage checkResult(String value) {
-        $("#output").shouldHave(text(value));
+        outputBox.shouldHave(text(value));
 
         return this;
     }
