@@ -51,7 +51,7 @@ public class RandomUtils {
     }
 
     public String getRandomPicture() {
-        return faker.options().option("testpicture.jpg");
+        return faker.options().option("test.jpg");
     }
 
     public String getRandomState() {
