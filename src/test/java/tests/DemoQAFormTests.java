@@ -16,7 +16,7 @@ public class DemoQAFormTests extends TestBase {
                 .setUserEmail(testData.userEmailAddress)
                 .setGender(testData.userGender)
                 .setUserNumber(testData.userPhoneNumber)
-                .setBirthDate(testData.userBirthdayDay, testData.userBirthdayMonth, testData.userBirthdayYear)
+                .setBirthDate(testData.userBirthdayYear, testData.userBirthdayMonth, testData.userBirthdayDay)
                 .setSubject(testData.userSubject)
                 .setHobby(testData.userHobby)
                 .setPicture(testData.userPicture)

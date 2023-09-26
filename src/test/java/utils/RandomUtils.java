@@ -15,7 +15,7 @@ public class RandomUtils {
     }
 
     public String getRandomLastName() {
-        return faker.name().firstName();
+        return faker.name().lastName();
     }
 
     public String getRandomStreetAddress() {
@@ -35,7 +35,7 @@ public class RandomUtils {
     }
 
     public String getRandomPhoneNumber() {
-        return faker.number().digits(10);
+        return faker.phoneNumber().subscriberNumber(10);
     }
 
     public String getRandomGender() {
@@ -58,8 +58,8 @@ public class RandomUtils {
         return faker.options().option("NCR", "Uttar Pradesh", "Haryana", "Rajasthan");
     }
 
-    public String getRandomCity() {
-        switch (getRandomState()) {
+    public String getRandomCity(String stateValue) {
+        switch (stateValue) {
             case "NCR":
                 return faker.options().option("Delhi", "Gurgaon", "Noida");
             case "Uttar Pradesh":
@@ -71,15 +71,17 @@ public class RandomUtils {
         }
     }
 
-    public int getRandomDay() {
-        return faker.number().numberBetween(10, 28);
+    public String getRandomDay() {
+        int day = faker.number().numberBetween(1,30);
+        if (day < 10) {return "0" + day;} else {return Integer.toString(day);}
     }
 
     public String getRandomMonth() {
         return faker.options().option("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
     }
 
-    public int getRandomYear() {
-        return faker.number().numberBetween(1923, 2005);
+    public String getRandomYear() {
+        int year = faker.number().numberBetween(1930, 2020);
+        return Integer.toString(year);
     }
 }

@@ -16,10 +16,10 @@ public class TestData {
             userHobby = randomUtils.getRandomHobby(),
             userPicture = randomUtils.getRandomPicture(),
             userState = randomUtils.getRandomState(),
-            userCity = randomUtils.getRandomCity(),
-            userBirthdayDay = Integer.toString(randomUtils.getRandomDay()),
+            userCity = randomUtils.getRandomCity(userState),
+            userBirthdayDay = randomUtils.getRandomDay(),
             userBirthdayMonth = randomUtils.getRandomMonth(),
-            userBirthdayYear = Integer.toString(randomUtils.getRandomYear()),
+            userBirthdayYear = randomUtils.getRandomYear(),
             userFullName = randomUtils.getRandomFullName(),
             userCurrentAddress = randomUtils.getRandomCurrentAddress(),
             userPermanentAddress = randomUtils.getRandomPermanentAddress();
